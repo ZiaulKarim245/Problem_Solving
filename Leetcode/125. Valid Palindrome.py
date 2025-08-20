@@ -4,7 +4,7 @@ class Solution:
         text = ''.join(a for a in text if a.isalnum())
         # text = ''.join(filter(str.isalnum,text)).lower()
         print(text)
-        if text == text[::-1]: # ''.join(reverse(text))
+        if text == text[::-1]: # ''.join(reversed(text))
             return True
         else:
             return False
