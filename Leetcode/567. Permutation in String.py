@@ -11,9 +11,25 @@ class Solution:
         # return False
 
         # Approach 2
+        # n, m = len(s2), len(s1)
+        # for i in range(n - m + 1):
+        #     if sorted(s1) == sorted(s2[i:i + m]):
+        #         return True
+        # return False
+        # Approach 3
         n, m = len(s2), len(s1)
-        for i in range(n - m + 1):
-            if sorted(s1) == sorted(s2[i:i + m]):
+        tar = [0] * 26
+        res = [0] * 26
+        for ch in s1:
+            tar[ord(ch) - ord('a')] += 1
+        for ch in s2[:m]:
+            res[ord(ch) - ord('a')] += 1
+        if tar == res:
+            return True
+        for i in range(m,n):
+            res[ord(s2[i]) - ord('a')] += 1
+            res[ord(s2[i - m]) - ord('a')] -= 1
+            if tar == res:
                 return True
         return False
 
