@@ -22,7 +22,22 @@ class Solution:
         # return nums
 
         # Approach 2
-        
+        n = len(nums)
+        index = -1
+        for i in range(n - 2,-1,-1):
+            if nums[i] < nums[i + 1]:
+                index = i
+                break
+        if index == -1:
+            nums[:] = nums[::-1] # sorted(nums)
+            return
+        for i in range(n - 1,index,-1):
+            if nums[i] > nums[index]:
+                nums[i], nums[index] = nums[index], nums[i]
+                nums[index + 1:]  = sorted(nums[index + 1:])
+                break
+        return nums
+
 
 
 
