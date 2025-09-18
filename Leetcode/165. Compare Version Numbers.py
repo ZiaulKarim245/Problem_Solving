@@ -71,5 +71,5 @@ class Solution:
 
 version1 = input()
 version2 = input()
-obj = Soluiton()
+obj = Solution()
 print(obj.compareVersion(version1, version2))
