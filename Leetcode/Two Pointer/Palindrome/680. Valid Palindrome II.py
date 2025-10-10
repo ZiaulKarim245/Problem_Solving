@@ -10,7 +10,7 @@ class Solution:
         #         l += 1 
         #         r -= 1
         #     return True
-
+        
         # i, j = 0, len(text) - 1
         # while i < j:
         #     if text[i] != text[j]:
