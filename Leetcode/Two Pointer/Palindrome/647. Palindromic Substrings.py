@@ -19,7 +19,7 @@ class Solution:
         # return cnt
 
         # Approach 2
-        def palindrome(s, left, right):
+        def palindrome(left, right):
             cnt = 0
             while left >= 0 and right < n and s[left] == s[right]:
                 cnt += 1
@@ -28,8 +28,8 @@ class Solution:
             return cnt
         result = 0
         for i in range(n):
-            result += palindrome(s, i, i)
-            result += palindrome(s, i, i + 1)
+            result += palindrome(i, i)
+            result += palindrome(i, i + 1)
         return result
 
 s = input()
