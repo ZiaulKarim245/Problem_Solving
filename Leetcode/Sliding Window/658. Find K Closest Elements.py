@@ -15,8 +15,6 @@ class Solution:
                 right = mid 
         return arr[left:left + k]
             
-        
-
 arr = list(map(int, input().split()))
 k, x = int(input()), int(input())
 obj = Solution()
