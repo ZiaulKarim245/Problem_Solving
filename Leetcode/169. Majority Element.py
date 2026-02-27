@@ -16,11 +16,23 @@ class Solution:
         # return nums[n//2]
     
         # Approach 2: Hash Map
-        count = defaultdict(int)
-        n = n//2
+        # count = defaultdict(int)
+        # n = n//2
         
+        # for num in nums:
+        #     count[num] += 1
+        # for key, value in count.item():
+        #     if value > n:
+        #         return key
+
+        # Approach 3: Moore Voting Algorithm
+        count, element = 0, 0
+
         for num in nums:
-            count[num] += 1
-        for key, value in count.item():
-            if value > n:
-                return key
+            if count == 0:
+                element = num
+            if element == num:
+                count += 1
+            else:
+                count -= 1
+        return element
